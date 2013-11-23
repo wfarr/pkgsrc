@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2013/09/15 13:55:54 taca Exp $
+
+SHA1 (execjs-2.0.1.gem) = 1c02b4f7334093a9cc22684580c1b33c37f15c81
+RMD160 (execjs-2.0.1.gem) = 95f3b3aec7ca820b8ac9dae6530a681251cb7d84
+Size (execjs-2.0.1.gem) = 15872 bytes

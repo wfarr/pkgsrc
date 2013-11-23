@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2013/09/15 17:18:36 taca Exp $
+
+SHA1 (pygments.rb-0.5.2.gem) = 8354290a48bf7667f9a222c0cc680deddcaa9f5b
+RMD160 (pygments.rb-0.5.2.gem) = fb894befe95ec3430116524f9ac6bdb7cd6d656f
+Size (pygments.rb-0.5.2.gem) = 1493504 bytes

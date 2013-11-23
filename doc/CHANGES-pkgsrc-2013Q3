@@ -1,0 +1,53 @@
+$NetBSD: CHANGES-pkgsrc-2013Q3,v 1.1.2.14 2013/11/13 22:23:31 tron Exp $
+
+Changes to the packages collection and infrastructure on the
+pkgsrc-2013Q3 branch:
+
+Created pkgsrc-2013Q3 branch [wiz 2013-09-30 10:40 UTC]
+
+Pullup ticket #4238 - requested by wiz
+security/gnupg: security update
+Pullup ticket #4239 - requested by wiz
+security/gnupg2: security update
+Pullup ticket #4237 - requested by obache
+www/ap2-subversion: functionality fix
+Pullup ticket #4240 - requested by wiz
+x11/modular-xorg-server: security fix
+Pullup ticket #4241 - requested by tez
+graphics/librsvg: security patch
+Pullup ticket #4242 - requested by taca
+sysutils/ruby-rb-appscript: build fix
+Pullup ticket #4243 - requested by he
+graphics/png: build fix
+Pullup ticket #4244 - requested by obache
+www/py-genshi: security update
+Pullup ticket #4245 - requested by joerg
+devel/bmake: build fix
+Pullup ticket #4246 - requested by joerg
+lang/python27: build fix
+Pullup ticket #4247 - requested by bsiegert
+lang/gawk: build fix
+Pullup ticket #4248 - requested by taca
+databases/ruby-activerecord32: security update
+devel/ruby-activemodel32: security update
+devel/ruby-activesupport32: security update
+devel/ruby-railties32: security update
+mail/ruby-actionmailer32: security update
+www/ruby-actionpack32: security update
+www/ruby-activeresource32: security update
+www/ruby-rails32: security update
+Pullup ticket #4249 - requested by taca
+mail/roundcube: security update
+Pullup ticket #4251 - requested by tron
+net/wireshark: security update
+Pullup ticket #4250 - requested by joerg
+security/openssl: build fix for Linux/POWERPC64
+Pullup ticket #4252 - requested by bsiegert
+lang/ruby200-base: build fix
+lang/ruby: build fix for lang/ruby200-base
+Pullup ticket #4253 - requested by taca
+lang/ruby18-base: build fix
+lang/ruby193-base: build fix
+lang/ruby200-base: build fix
+Pullup ticket #4254 - requested by obache
+multimedia/adobe-flash-plugin11: security update

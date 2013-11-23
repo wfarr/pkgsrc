@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.2 2013/07/29 06:42:32 wiz Exp $
+
+SHA1 (spectrwm-2.3.0.tgz) = 38a4ec1f11e469e1a8bddeb2e478fe2ff6bc3fdc
+RMD160 (spectrwm-2.3.0.tgz) = e27c47765d818ffbcc5363b32bae44df68e9a872
+Size (spectrwm-2.3.0.tgz) = 109384 bytes
+SHA1 (patch-linux_Makefile) = 804bbae49715516cd54b4fa44a660ae68b0e1feb

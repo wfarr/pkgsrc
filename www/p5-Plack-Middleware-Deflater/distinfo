@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2013/08/22 04:39:24 wen Exp $
+
+SHA1 (Plack-Middleware-Deflater-0.11.tar.gz) = dd1110d29826bf51bd503e840651c965c62f55fd
+RMD160 (Plack-Middleware-Deflater-0.11.tar.gz) = 673cabdf435bd66ea47d231ac14fccbf13743326
+Size (Plack-Middleware-Deflater-0.11.tar.gz) = 26100 bytes

@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.4 2013/08/21 10:23:41 shattered Exp $
+
+SHA1 (aliados-0.2.0.tgz) = 07de1cdf27cff9e15764df7d09d327badf90b92c
+RMD160 (aliados-0.2.0.tgz) = ede3ed71908b166658fc82f651a87243fbf10dff
+Size (aliados-0.2.0.tgz) = 128397 bytes
+SHA1 (patch-cpm.cpp) = cd7350f8d854c10ec3afefb15df37855680a4ed9

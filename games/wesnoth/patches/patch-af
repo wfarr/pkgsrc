@@ -1,0 +1,12 @@
+$NetBSD: patch-af,v 1.6 2013/08/30 08:14:42 obache Exp $
+
+--- src/preferences.cpp.orig	2013-02-10 09:52:18.000000000 +0000
++++ src/preferences.cpp
+@@ -33,6 +33,7 @@
+ #include "serialization/parser.hpp"
+ 
+ #include <sys/stat.h> // for setting the permissions of the preferences file
++#include <unistd.h>
+ 
+ static lg::log_domain log_config("config");
+ #define ERR_CFG LOG_STREAM(err , log_config)

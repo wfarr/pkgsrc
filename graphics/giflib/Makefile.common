@@ -1,0 +1,29 @@
+# $NetBSD: Makefile.common,v 1.5 2013/08/31 18:41:33 adam Exp $
+# used by graphics/giflib/Makefile
+# used by graphics/giflib-util/Makefile
+
+DISTNAME=	giflib-5.0.5
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=giflib/}
+EXTRACT_SUFX=	.tar.bz2
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	http://giflib.sourceforge.net/
+LICENSE=	mit
+
+#PATCHDIR=	${.CURDIR}/../../graphics/giflib/patches
+DISTINFO_FILE=	${.CURDIR}/../../graphics/giflib/distinfo
+
+USE_LANGUAGES=		c c++
+USE_LIBTOOL=		yes
+GNU_CONFIGURE=		yes
+
+CONFIGURE_ARGS+=	--disable-rle
+CONFIGURE_ARGS+=	--disable-x11
+CONFIGURE_ARGS+=	--disable-gl
+
+SUBST_CLASSES+=		split
+SUBST_FILES.split+=	util/Makefile.in
+SUBST_SED.split+=	-e 's,../lib/libgif.la,$$(prefix)/lib/libgif.la,g'
+SUBST_MESSAGE.split=	Change Makefile for giflib-util split-off.
+SUBST_STAGE.split=	pre-configure

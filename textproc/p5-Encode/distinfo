@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.15 2013/09/05 19:58:14 wiz Exp $
+
+SHA1 (Encode-2.54.tar.gz) = 40d636dc18c379c3d50f6b3ed9da8434076c0cc4
+RMD160 (Encode-2.54.tar.gz) = 8132d2215a1093bb89528e6c0cc7028963c06413
+Size (Encode-2.54.tar.gz) = 2008842 bytes

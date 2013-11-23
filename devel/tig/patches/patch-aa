@@ -1,0 +1,24 @@
+$NetBSD: patch-aa,v 1.5 2013/08/23 05:09:28 schmonz Exp $
+
+Don't make/install PDF, and be sure to install test-graph.
+
+--- Makefile.orig	2013-08-10 14:27:12.000000000 +0000
++++ Makefile
+@@ -44,7 +44,7 @@ TESTS	= test-graph
+ TXTDOC	= tig.1.txt tigrc.5.txt manual.txt NEWS README INSTALL BUGS
+ MANDOC	= tig.1 tigrc.5 tigmanual.7
+ HTMLDOC = tig.1.html tigrc.5.html manual.html README.html NEWS.html
+-ALLDOC	= $(MANDOC) $(HTMLDOC) manual.html-chunked manual.pdf
++ALLDOC	= $(MANDOC) $(HTMLDOC) manual.html-chunked
+ 
+ # Never include the release number in the tarname for tagged
+ # versions.
+@@ -71,7 +71,7 @@ doc-html: $(HTMLDOC)
+ 
+ install: all
+ 	mkdir -p $(DESTDIR)$(bindir) && \
+-	for prog in $(PROGS); do \
++	for prog in $(PROGS) $(TESTS); do \
+ 		install -p -m 0755 "$$prog" "$(DESTDIR)$(bindir)"; \
+ 	done
+ 

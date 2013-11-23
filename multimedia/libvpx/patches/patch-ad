@@ -1,0 +1,56 @@
+$NetBSD: patch-ad,v 1.9 2013/09/11 15:50:32 ryoon Exp $
+
+*BSD and qnx are identified as linux.
+Add another SDK path on Mac OS X.
+
+--- build/make/configure.sh.orig	2013-09-04 18:49:22.000000000 +0000
++++ build/make/configure.sh
+@@ -645,7 +645,7 @@ process_common_toolchain() {
+                 [ -z "$tgt_isa" ] && tgt_isa=x86
+                 tgt_os=win32
+                 ;;
+-            *linux*|*bsd*)
++            *linux*|*bsd*|*qnx6*)
+                 tgt_os=linux
+                 ;;
+             *solaris2.10)
+@@ -960,8 +960,6 @@ process_common_toolchain() {
+             check_add_cflags -mips32r2 -mdspr2
+             disable fast_unaligned
+         fi
+-        check_add_cflags -march=${tgt_isa}
+-        check_add_asflags -march=${tgt_isa}
+         check_add_asflags -KPIC
+     ;;
+     ppc*)
+@@ -1160,10 +1158,29 @@ EOF
+         case ${toolchain} in
+             *-win*-vs*);;
+             *-android-gcc);;
+-            *) check_header pthread.h && add_extralibs -lpthread
++            *) check_header pthread.h && add_extralibs ${PTHREAD_LDFLAGS} ${PTHREAD_LIBS}
+         esac
+     fi
+ 
++    case ${tgt_os} in
++    darwin*)
++       add_extralibs -lm
++       ;;
++    solaris*)
++       add_extralibs -lm -lrt
++       ;;
++       linux*)
++       case ${gcctarget} in
++       *qnx6*)
++           add_extralibs -lm
++           ;;
++       *)
++           add_extralibs -lm -lrt
++           ;;
++       esac
++       ;;
++    esac
++
+     # only for MIPS platforms
+     case ${toolchain} in
+         mips*)

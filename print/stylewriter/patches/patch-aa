@@ -1,0 +1,56 @@
+$NetBSD: patch-aa,v 1.2 2013/09/10 14:41:18 joerg Exp $
+
+--- lpstyl.c.orig	1999-03-31 09:05:21.000000000 +0000
++++ lpstyl.c
+@@ -1015,10 +1015,13 @@ size_t readFileScanline(char *bufK, char
+ 					if((i & 0x03) == 0)
+ 					{
+ 						/* write the output */
+-						*((unsigned char *)bufK)++ = cmyk & 0x000000FF;		cmyk >>= 8;
+-						*((unsigned char *)bufY)++ = cmyk & 0x000000FF;		cmyk >>= 8;
+-						*((unsigned char *)bufM)++ = cmyk & 0x000000FF;		cmyk >>= 8;
+-						*((unsigned char *)bufC)++ = cmyk & 0x000000FF;
++						*bufK++ = (char)(cmyk & 0x000000FF);
++						cmyk >>= 8;
++						*bufY++ = (char)(cmyk & 0x000000FF);
++						cmyk >>= 8;
++						*bufM++ = (char)(cmyk & 0x000000FF);
++						cmyk >>= 8;
++						*bufC++ = (char)(cmyk & 0x000000FF);
+ 						cmyk = 0;
+ 					}
+ 				}
+@@ -1031,10 +1034,10 @@ size_t readFileScanline(char *bufK, char
+ 				}
+ 				
+ 				/* write the final part */
+-				*((unsigned char *)bufK)++ = cmyk & 0x000000FF;		cmyk >>= 8;
+-				*((unsigned char *)bufY)++ = cmyk & 0x000000FF;		cmyk >>= 8;
+-				*((unsigned char *)bufM)++ = cmyk & 0x000000FF;		cmyk >>= 8;
+-				*((unsigned char *)bufC)++ = cmyk & 0x000000FF;
++				*bufK++ = (char)(cmyk & 0x000000FF);		cmyk >>= 8;
++				*bufY++ = (char)(cmyk & 0x000000FF);		cmyk >>= 8;
++				*bufM++ = (char)(cmyk & 0x000000FF);		cmyk >>= 8;
++				*bufC++ = (char)(cmyk & 0x000000FF);
+ 			}
+ 			else
+ 			{
+@@ -1327,7 +1330,7 @@ void sendEncodedData(unsigned char *buff
+ 
+ 	if(verbose)
+ 	{
+-		fprintf(stderr, "%s: Sending encoded data (0x%x bytes).\n", 
++		fprintf(stderr, "%s: Sending encoded data (0x%zx bytes).\n", 
+ 				ProcName, size);
+ 	}	
+ 	begin[0] = 'G';
+@@ -1827,7 +1830,8 @@ void waitStatus(int stat, int canHandleP
+ static int inputBack = -1;
+ size_t inputRead(void *buffer, size_t size)
+ {
+-	size_t result = 0, len = 0;
++	size_t result = 0;
++	ssize_t len = 0;
+ 	
+ 	if((inputBack != -1) && (size > result))
+ 	{

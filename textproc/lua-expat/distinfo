@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.6 2013/09/01 04:48:21 ryoon Exp $
+
+SHA1 (lua-expat-1f41c74ce686.tar.gz) = 06027ced5a8c54beeea78ff3eafb3179eb1cba6f
+RMD160 (lua-expat-1f41c74ce686.tar.gz) = 4fb772cac21af31d43b34a742b2f4b81117f047f
+Size (lua-expat-1f41c74ce686.tar.gz) = 28917 bytes
+SHA1 (patch-Makefile) = f9a31f0b0964fcafbf01f0e3bbb45ce97a4a708d
